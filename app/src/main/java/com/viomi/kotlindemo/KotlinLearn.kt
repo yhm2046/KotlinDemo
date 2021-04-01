@@ -3,6 +3,53 @@ package com.viomi.kotlindemo
 import kotlin.math.max
 val name2 ="Tony"
 fun main(){
+    /***************Lambda函数式编程：2.6.2 集合式函数api***************/
+//     把所有小写变成大写
+//    找到单词最长的结果
+    val list6= listOf("apple","orange","watermelon","watermelo1")
+    val lamba6=list6.maxBy({fruit:String->fruit.length})
+    println("6max length fruit:"+lamba6+"\n")
+
+    val list5= listOf("apple","orange","watermelon","watermelo1")
+    val lamba1={fruit:String->fruit.length}
+    println("max length fruit:"+list5.maxBy (lamba1)+"\n")
+
+    val list4= listOf("apple","orange","watermelon","watermelo1")
+    println("max length fruit:"+list4.maxBy { it.length }+"\n")
+    /***************Lambda函数式编程：2.6.1 集合的创建与遍历***************/
+//map遍历
+    val map2= mapOf("pixel" to 1,"pixel2XL" to 2,"nexus 6p" to 3)
+    for ((phone,number)in map2) println("phone:"+phone+",num:"+number)
+    println("---------------------------------------------")
+    for (name in map2) println(name)
+    println("---------------------------------------------")
+    val map=HashMap<String,Int>()
+    map["michael"]=1
+    map["evan"]=2
+    map["zara"]=1
+    map["jack"]=4
+    map["michael2"]=5
+    for (name in map) println(name)
+    println("---------------------------------------------")
+//可变set遍历
+    val set1= setOf("apple","banana","orange")
+    for (fruit in set1) println(fruit)
+    println("---------------------------------------------")
+//    可变arrylist例子
+    val list2= mutableListOf("apple","banana","orange")
+    list2.add("watermelon")
+    for (fruit in list2) println(fruit)
+//    遍历arraylist
+    val list= listOf("apple","banana","orange")
+    for (fruit in list) println(fruit)
+//    测试2.5.4   数据类与单例类
+    /******************单例类例子************************/
+    println("调用单例中的函数:"+Singleton.singletonTest())
+    /******************数据类例子************************/
+    val cellphone1=Cellphone("pixelxl",600.99)
+    val cellphone2=Cellphone("pixelxl",600.99)
+    println(cellphone1)
+    println("cellphone1 equals cellphone2:"+(cellphone1==cellphone2))
 //    接口用法
     val student5=Student5("Michell",31)
     student5.doHomework()
