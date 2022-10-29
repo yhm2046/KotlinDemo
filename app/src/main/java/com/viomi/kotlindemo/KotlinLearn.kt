@@ -7,15 +7,15 @@ fun main(){
 //     把所有小写变成大写
 //    找到单词最长的结果
     val list6= listOf("apple","orange","watermelon","watermelo1")
-    val lamba6=list6.maxBy({fruit:String->fruit.length})
+    val lamba6= list6.maxByOrNull({ fruit:String->fruit.length})
     println("6max length fruit:"+lamba6+"\n")
 
     val list5= listOf("apple","orange","watermelon","watermelo1")
     val lamba1={fruit:String->fruit.length}
-    println("max length fruit:"+list5.maxBy (lamba1)+"\n")
+    println("max length fruit:"+ list5.maxByOrNull(lamba1) +"\n")
 
     val list4= listOf("apple","orange","watermelon","watermelo1")
-    println("max length fruit:"+list4.maxBy { it.length }+"\n")
+    println("max length fruit:"+ list4.maxByOrNull { it.length } +"\n")
     /***************Lambda函数式编程：2.6.1 集合的创建与遍历***************/
 //map遍历
     val map2= mapOf("pixel" to 1,"pixel2XL" to 2,"nexus 6p" to 3)
